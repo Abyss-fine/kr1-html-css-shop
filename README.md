@@ -31,5 +31,5 @@
 Создана базовая структура проекта.
 ## Ссылка на опубликованный проект
 
-GitHub Pages: https://github.io
+GitHub Pages: https://github.com/Abyss-fine/kr1-html-css-shop.git
 
