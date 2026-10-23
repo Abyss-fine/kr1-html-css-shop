@@ -1,0 +1,304 @@
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Оформление заказа — GameVault</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container site-header__inner">
+
+            <a href="index.html" class="site-header__logo">
+                GameVault
+            </a>
+
+            <nav class="site-nav" aria-label="Основная навигация">
+                <ul class="site-nav__list">
+
+                    <li class="site-nav__item">
+                        <a href="index.html" class="site-nav__link">
+                            Главная
+                        </a>
+                    </li>
+
+                    <li class="site-nav__item">
+                        <a href="catalog.html" class="site-nav__link">
+                            Каталог
+                        </a>
+                    </li>
+
+                    <li class="site-nav__item">
+                        <a href="order.html"
+                           class="site-nav__link site-nav__link--active"
+                           aria-current="page">
+                            Заказ
+                        </a>
+                    </li>
+
+                    <li class="site-nav__item">
+                        <a href="contacts.html" class="site-nav__link">
+                            Контакты
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <main class="order-page">
+        <div class="container">
+
+            <nav class="breadcrumbs" aria-label="Хлебные крошки">
+                <a href="index.html">Главная</a>
+                <span aria-hidden="true">/</span>
+                <span aria-current="page">Оформление заказа</span>
+            </nav>
+
+            <section class="order-section"
+                     aria-labelledby="order-title">
+
+                <h1 id="order-title">Оформление заказа</h1>
+
+                <p class="order-section__description">
+                    Заполните данные для оформления покупки.
+                </p>
+
+                <div class="order-layout">
+
+                    <!-- Форма покупателя -->
+                    <form class="order-form" id="order-form">
+
+                        <h2>Данные покупателя</h2>
+
+                        <div class="order-form__field">
+                            <label for="customer-name">
+                                Ваше имя
+                            </label>
+
+                            <input type="text"
+                                   id="customer-name"
+                                   name="customer-name"
+                                   placeholder="Иван Иванов"
+                                   autocomplete="name"
+                                   required>
+                        </div>
+
+                        <div class="order-form__field">
+                            <label for="customer-email">
+                                Электронная почта
+                            </label>
+
+                            <input type="email"
+                                   id="customer-email"
+                                   name="customer-email"
+                                   placeholder="example@mail.ru"
+                                   autocomplete="email"
+                                   required>
+                        </div>
+
+                        <fieldset class="order-form__payment">
+                            <legend>Способ оплаты</legend>
+
+                            <label>
+                                <input type="radio"
+                                       name="payment"
+                                       value="card"
+                                       checked>
+                                Банковская карта
+                            </label>
+
+                            <label>
+                                <input type="radio"
+                                       name="payment"
+                                       value="sbp">
+                                СБП
+                            </label>
+                        </fieldset>
+
+                        <button type="submit"
+                                class="button button--primary">
+                            Подтвердить заказ
+                        </button>
+
+                        <p class="order-form__note">
+                            Демонстрационный заказ.
+                            Реальная оплата не производится.
+                        </p>
+
+                    </form>
+
+                    <!-- Информация о выбранной игре -->
+                    <aside class="order-summary">
+
+                        <h2>Ваш заказ</h2>
+
+                        <img id="order-image"
+                             class="order-summary__image"
+                             src=""
+                             alt="Обложка выбранной игры"
+                             hidden>
+
+                        <h3 id="order-game">
+                            Загрузка игры...
+                        </h3>
+
+                        <p class="order-summary__label">
+                            Цифровая версия для PC
+                        </p>
+
+                        <div class="order-summary__total">
+                            <span>Итого:</span>
+                            <strong id="order-price">—</strong>
+                        </div>
+
+                        <a href="catalog.html"
+                           class="section-heading__link">
+                            ← Вернуться в каталог
+                        </a>
+
+                    </aside>
+
+                </div>
+
+            </section>
+
+        </div>
+    </main>
+
+    <!-- Модальное окно -->
+    <div class="order-modal" id="order-modal" hidden>
+        <div class="order-modal__content"
+             role="dialog"
+             aria-modal="true"
+             aria-labelledby="modal-title">
+
+            <h2 id="modal-title">
+                Заказ оформлен!
+            </h2>
+
+            <p id="modal-message"></p>
+
+            <button type="button"
+                    id="modal-close"
+                    class="button button--primary">
+                Закрыть
+            </button>
+
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>© 2026 GameVault. Учебный проект.</p>
+            <a href="contacts.html">Связаться с нами</a>
+        </div>
+    </footer>
+
+    <script>
+        const games = {
+            "control": {
+                title: "Control Ultimate Edition",
+                price: 1499,
+                image: "images/control.jpg"
+            },
+            "alan-wake": {
+                title: "Alan Wake 2",
+                price: 2499,
+                image: "images/alan-wake.jpg"
+            },
+            "resonant": {
+                title: "CONTROL Resonant",
+                price: 3499,
+                image: "images/control-resonant.jpg"
+            },
+            "max-payne": {
+                title: "Max Payne (2001)",
+                price: 499,
+                image: "images/max-payne.jpg"
+            }
+        };
+
+        const params = new URLSearchParams(window.location.search);
+        const gameId = params.get("game");
+        const selectedGame = Object.hasOwn(games, gameId)
+            ? games[gameId]
+            : null;
+
+        const gameTitle = document.getElementById("order-game");
+        const gamePrice = document.getElementById("order-price");
+        const gameImage = document.getElementById("order-image");
+        const orderForm = document.getElementById("order-form");
+
+        if (selectedGame) {
+            gameTitle.textContent = selectedGame.title;
+            gamePrice.textContent =
+                selectedGame.price.toLocaleString("ru-RU") + " ₽";
+
+            gameImage.src = selectedGame.image;
+            gameImage.alt = "Обложка " + selectedGame.title;
+            gameImage.hidden = false;
+        } else {
+            gameTitle.textContent = "Игра не выбрана";
+            gamePrice.textContent = "—";
+
+            const submitButton = orderForm.querySelector(
+                'button[type="submit"]'
+            );
+
+            submitButton.disabled = true;
+        }
+
+        const modal = document.getElementById("order-modal");
+        const modalMessage = document.getElementById("modal-message");
+        const modalClose = document.getElementById("modal-close");
+
+        orderForm.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            if (!selectedGame || !orderForm.reportValidity()) {
+                return;
+            }
+
+            const customerName = document
+                .getElementById("customer-name")
+                .value.trim();
+
+            if (!customerName) {
+                return;
+            }
+
+            modalMessage.textContent =
+                customerName + ", ваш демонстрационный заказ на игру «" +
+                selectedGame.title + "» успешно оформлен!";
+
+            modal.hidden = false;
+            modalClose.focus();
+        });
+
+        function closeModal() {
+            modal.hidden = true;
+        }
+
+        modalClose.addEventListener("click", closeModal);
+
+        modal.addEventListener("click", function(event) {
+            if (event.target === modal) {
+                closeModal();
+            }
+        });
+
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "Escape" && !modal.hidden) {
+                closeModal();
+            }
+        });
+    </script>
+
+</body>
+</html>

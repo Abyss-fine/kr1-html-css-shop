@@ -1,37 +1,318 @@
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Каталог товаров</title>
-  <link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta name="description"
+          content="GameVault — магазин компьютерных игр Remedy Entertainment. Control, Alan Wake 2, CONTROL Resonant и Max Payne.">
+
+    <title>GameVault — Главная</title>
+
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <h1>Учебный интернет-магазин</h1>
-  </header>
 
-  <main>
-    <section>
-  <h2>О проекте</h2>
-  <p>
-    В рамках данного проекта будет разработан многостраничный сайт
-    интернет-магазина или каталога услуг. Проект будет постепенно
-    расширяться на следующих практических занятиях.
-  </p>
-</section>
-    <section>
-      <h2>Главная страница проекта</h2>
-      <p>
-        Это стартовая страница учебного frontend-проекта.
-        В дальнейшем здесь будет разработан многостраничный сайт
-        интернет-магазина или каталога услуг.
-      </p>
-    </section>
-  </main>
+    <!-- Шапка сайта -->
+    <header class="site-header">
+        <div class="container site-header__inner">
 
-  <footer>
-    <p>&copy; 2026 Учебный проект</p>
-  </footer>
+            <a href="index.html" class="site-header__logo">
+                GameVault
+            </a>
+
+            <nav class="site-nav" aria-label="Основная навигация">
+                <ul class="site-nav__list">
+
+                    <li class="site-nav__item">
+                        <a href="index.html"
+                           class="site-nav__link site-nav__link--active"
+                           aria-current="page">
+                            Главная
+                        </a>
+                    </li>
+
+                    <li class="site-nav__item">
+                        <a href="catalog.html" class="site-nav__link">
+                            Каталог
+                        </a>
+                    </li>
+
+                    <li class="site-nav__item">
+                        <a href="order.html" class="site-nav__link">
+                            Заказ
+                        </a>
+                    </li>
+
+                    <li class="site-nav__item">
+                        <a href="contacts.html" class="site-nav__link">
+                            Контакты
+                        </a>
+                    </li>
+
+                </ul>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- Основное содержимое -->
+    <main>
+
+        <!-- Главный баннер -->
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container">
+
+                <div class="hero__content">
+
+                    <p class="hero__eyebrow">
+                        КОЛЛЕКЦИЯ REMEDY ENTERTAINMENT
+                    </p>
+
+                    <h1 class="hero__title" id="hero-title">
+                        ИГРЫ, КОТОРЫЕ
+                        МЕНЯЮТ РЕАЛЬНОСТЬ
+                    </h1>
+
+                    <p class="hero__description">
+                        Погрузись в загадочные миры,
+                        раскрой тайны Старейшего дома,
+                        переживи кошмары Тёмной обители
+                        и почувствуй атмосферу
+                        легендарных историй Remedy.
+                    </p>
+
+                    <a href="catalog.html"
+                       class="button button--primary">
+                        Смотреть каталог
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Популярные игры -->
+        <section class="featured-products"
+                 aria-labelledby="featured-title">
+
+            <div class="container">
+
+                <div class="section-heading">
+
+                    <h2 class="section-title" id="featured-title">
+                        Игры Remedy
+                    </h2>
+
+                    <a href="catalog.html"
+                       class="section-heading__link">
+                        Весь каталог →
+                    </a>
+
+                </div>
+
+                <div class="product-grid">
+
+                    <!-- Control Ultimate Edition -->
+                    <article class="product-card">
+
+                        <span class="product-card__badge">
+                            ХИТ
+                        </span>
+
+                        <img class="product-card__image"
+                             src="images/control.jpg"
+                             alt="Обложка Control Ultimate Edition"
+                             loading="lazy">
+
+                        <div class="product-card__content">
+
+                            <p class="product-card__genre">
+                                Экшен
+                            </p>
+
+                            <h3 class="product-card__title">
+                                Control Ultimate Edition
+                            </h3>
+
+                            <p class="product-card__price">
+                                1 499 ₽
+                            </p>
+
+                            <a href="product.html"
+                               class="button button--primary">
+                                Подробнее
+                            </a>
+
+                        </div>
+                    </article>
+
+                    <!-- Alan Wake 2 -->
+                    <article class="product-card">
+
+                        <span class="product-card__badge">
+                            ПОПУЛЯРНОЕ
+                        </span>
+
+                        <img class="product-card__image"
+                             src="images/alan-wake.jpg"
+                             alt="Обложка Alan Wake 2"
+                             loading="lazy">
+
+                        <div class="product-card__content">
+
+                            <p class="product-card__genre">
+                                Хоррор
+                            </p>
+
+                            <h3 class="product-card__title">
+                                Alan Wake 2
+                            </h3>
+
+                            <p class="product-card__price">
+                                2 499 ₽
+                            </p>
+
+                            <a href="product-alan-wake.html"
+                               class="button button--primary">
+                                Подробнее
+                            </a>
+
+                        </div>
+                    </article>
+
+                    <!-- CONTROL Resonant -->
+                    <article class="product-card">
+
+                        <span class="product-card__badge">
+                            НОВИНКА
+                        </span>
+
+                        <img class="product-card__image"
+                             src="images/control-resonant.jpg"
+                             alt="Обложка CONTROL Resonant"
+                             loading="lazy">
+
+                        <div class="product-card__content">
+
+                            <p class="product-card__genre">
+                                Экшен-RPG
+                            </p>
+
+                            <h3 class="product-card__title">
+                                CONTROL Resonant
+                            </h3>
+
+                            <p class="product-card__price">
+                                3 499 ₽
+                            </p>
+
+                            <a href="product-resonant.html"
+                               class="button button--primary">
+                                Подробнее
+                            </a>
+
+                        </div>
+                    </article>
+
+                    <!-- Max Payne -->
+                    <article class="product-card">
+
+                        <span class="product-card__badge">
+                            КЛАССИКА
+                        </span>
+
+                        <img class="product-card__image"
+                             src="images/max-payne.jpg"
+                             alt="Обложка Max Payne 2001 года"
+                             loading="lazy">
+
+                        <div class="product-card__content">
+
+                            <p class="product-card__genre">
+                                Шутер
+                            </p>
+
+                            <h3 class="product-card__title">
+                                Max Payne (2001)
+                            </h3>
+
+                            <p class="product-card__price">
+                                499 ₽
+                            </p>
+
+                            <a href="product-max-payne.html"
+                               class="button button--primary">
+                                Подробнее
+                            </a>
+
+                        </div>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- Преимущества -->
+        <section class="advantages"
+                 aria-labelledby="advantages-title">
+
+            <div class="container">
+
+                <h2 class="section-title" id="advantages-title">
+                    Почему GameVault?
+                </h2>
+
+                <div class="advantages__grid">
+
+                    <article class="advantage-card">
+                        <h3>Легендарные истории</h3>
+                        <p>
+                            От нуарного Нью-Йорка до
+                            паранормальных коридоров
+                            Старейшего дома.
+                        </p>
+                    </article>
+
+                    <article class="advantage-card">
+                        <h3>Удобный каталог</h3>
+                        <p>
+                            Выбирай игры по жанрам,
+                            изучай описания и
+                            системные требования.
+                        </p>
+                    </article>
+
+                    <article class="advantage-card">
+                        <h3>Простой заказ</h3>
+                        <p>
+                            Выбери понравившуюся игру
+                            и оформи заказ через
+                            удобную форму.
+                        </p>
+                    </article>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Подвал -->
+    <footer class="site-footer">
+        <div class="container">
+
+            <p>© 2026 GameVault. Учебный проект.</p>
+
+            <a href="contacts.html">
+                Связаться с нами
+            </a>
+
+        </div>
+    </footer>
+
 </body>
 </html>
